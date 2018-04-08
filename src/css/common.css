@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #header .h_top img {
   width: 100%;
 }
@@ -84,6 +85,7 @@
 
 #nav {
   background-color: #3a3a3a;
+  position: relative;
 }
 
 #nav .container ul {
@@ -109,4 +111,157 @@
 
 #nav .container ul li:hover a {
   color: #3a3a3a;
+}
+
+#nav .list {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  width: 220px;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  background-color: #fff;
+  z-index: 100;
+}
+
+#nav .list h3 {
+  height: 75px;
+  line-height: 75px;
+  border-bottom: solid 1px #CCCCCC;
+  font-size: 28px;
+}
+
+#nav .list ul .item1 {
+  border-bottom: 1px solid #cccccc;
+  padding: 5px 0;
+}
+
+#nav .list ul .item1 .item2 {
+  font-size: 14px;
+  line-height: 28px;
+  font-weight: bold;
+}
+
+#nav .list ul .item1 .item2 a {
+  color: #666;
+}
+
+#footer {
+  background-color: #F6F6F6;
+}
+
+#footer .container .top {
+  padding-top: 10px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #cccccc;
+}
+
+#footer .container .top .left {
+  float: left;
+}
+
+#footer .container .top .left dl {
+  float: left;
+  height: 160px;
+  width: 168px;
+  list-style: none;
+  border-left: 1px dashed #CCCCCC;
+}
+
+#footer .container .top .left dl dt {
+  color: #999999;
+  font-family: 微软雅黑;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 30px;
+}
+
+#footer .container .top .left dl dd {
+  height: 26px;
+  line-height: 26px;
+  font-size: 12px;
+  text-align: center;
+}
+
+#footer .container .top .left dl dd a {
+  color: #666;
+}
+
+#footer .container .top .left dl:last-child {
+  border-right: 1px dashed #cccccc;
+}
+
+#footer .container .top .right {
+  float: left;
+}
+
+#footer .container .top .right li {
+  padding-left: 50px;
+  width: 230px;
+  list-style: none;
+  position: relative;
+  height: 168px;
+}
+
+#footer .container .top .right li h3 {
+  color: #999999;
+  font-family: 微软雅黑;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 30px;
+  display: block;
+  position: relative;
+}
+
+#footer .container .top .right li h3 i {
+  display: block;
+  position: absolute;
+  right: 25px;
+  top: -3px;
+}
+
+#footer .container .top .right li span {
+  color: red;
+  font-size: 18px;
+  display: block;
+  line-height: 30px;
+}
+
+#footer .container .top .right li p {
+  font-size: 12px;
+  line-height: 30px;
+}
+
+#footer .container .top .right li .erweima {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+}
+
+#footer .container .top .right li .erweima img {
+  width: 80px;
+  height: 80px;
+}
+
+#footer .container .top .right li .cert {
+  position: absolute;
+  right: 30px;
+  bottom: 25px;
+}
+
+#footer .container .bottom {
+  padding: 10px;
+}
+
+#footer .container .bottom span {
+  font-size: 12px;
+}
+
+#footer .container .bottom a {
+  display: inline-block;
+  word-space: nowrap;
+  font-size: 12px;
+  line-height: 20px;
+  margin: 0 10px;
 }
