@@ -84,5 +84,29 @@
 
 #nav {
   background-color: #3a3a3a;
-  height: 37px;
+}
+
+#nav .container ul {
+  display: flex;
+  height: 38px;
+}
+
+#nav .container ul li {
+  flex: 1;
+  text-align: center;
+  line-height: 38px;
+}
+
+#nav .container ul li a {
+  color: #fff;
+  font-size: 14px;
+  display: block;
+}
+
+#nav .container ul li:hover {
+  background-color: #fff;
+}
+
+#nav .container ul li:hover a {
+  color: #3a3a3a;
 }

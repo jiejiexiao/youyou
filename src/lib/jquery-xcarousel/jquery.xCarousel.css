@@ -1,5 +1,5 @@
 .xcarousel{position:relative;width:810px;height:320px;overflow:hidden;}
-.xcarousel img{display: block;}
+.xcarousel img{display: block;width: 100%;}
 .xcarousel ul{position:absolute;overflow:hidden;list-style: none;padding:0;margin:0;}
 .xcarousel ul.horizontal li{float:left;}
 .xcarousel ul.fade li{position:absolute;left:0;top:0;}

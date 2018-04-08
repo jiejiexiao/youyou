@@ -1,0 +1,21 @@
+#banner{
+    height: 700px;
+    .page{
+        right:50%;
+        transform:translate(50%,0);
+        span{
+            font-size: 12px;
+            margin-right: 2px;
+            text-align: center;
+            cursor: pointer;
+            color: #999999;
+            height: 24px;
+            width: 24px;
+            line-height: 24px;
+        }
+        .active{
+            color:#fff;
+            background-color:#000;
+        }
+    }
+}

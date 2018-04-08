@@ -1,0 +1,24 @@
+#banner {
+  height: 700px;
+}
+
+#banner .page {
+  right: 50%;
+  transform: translate(50%, 0);
+}
+
+#banner .page span {
+  font-size: 12px;
+  margin-right: 2px;
+  text-align: center;
+  cursor: pointer;
+  color: #999999;
+  height: 24px;
+  width: 24px;
+  line-height: 24px;
+}
+
+#banner .page .active {
+  color: #fff;
+  background-color: #000;
+}

@@ -7,7 +7,7 @@
 		let defaults = {
 			imgs:[],
 			width:800,
-			height:320,
+			height:700,
 			index:0,
 			duration:3000,
 			autoPlay:true,

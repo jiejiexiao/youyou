@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8" />
     <title>购物无忧</title>
-    <link rel="stylesheet" type="text/css" href="css/base.css" />
-    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/base.css" /><!-- 公共样式 -->
+    <link rel="stylesheet" type="text/css" href="css/common.css" /><!-- 公用部分 -->
+    <link rel="stylesheet" type="text/css" href="lib/jquery-xcarousel/jquery.xCarousel.css" /><!-- 轮播图样式 -->
+    <link rel="stylesheet" type="text/css" href="css/index.css" /><!-- 引入首页样式 -->
+    <script src="js/common.js" type="text/javascript"></script>
+    <script src="lib/jquery-3.2.1.js" type="text/javascript"></script><!-- 引入jQuery文件 -->
+    <script src="lib/jquery-xcarousel/jquery.xCarousel.js" type="text/javascript"></script><!-- 轮播图插件 -->
+    <script src="js/index.js" type="text/javascript"></script><!-- 首页js文件 -->
+
 </head>
 <body>
     <header id="header">
@@ -44,9 +51,22 @@
         </div>
     </header>
     <nav id="nav">
-        <div class="container"></div>
+        <div class="container">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">男运动鞋</a></li>
+                <li><a href="#">女运动鞋</a></li>
+                <li><a href="#">男装</a></li>
+                <li><a href="#">女装</a></li>
+                <li><a href="#">新品</a></li>
+                <li><a href="#">毛巾</a></li>
+                <li><a href="#">品牌馆</a></li>
+            </ul>
+        </div>
     </nav>
     <div id="banner"></div>
-    <footer id="footer"></footer>
+    <footer id="footer">
+        
+    </footer>
 </body>
 </html>
