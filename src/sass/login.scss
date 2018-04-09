@@ -1,143 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <title>用户中心</title>
-    <link rel="stylesheet" type="text/css" href="../css/base.css" /><!-- 公共样式 -->
-    <link rel="stylesheet" type="text/css" href="../css/common.css" /><!-- 公用部分 -->
-    <link rel="stylesheet" type="text/css" href="../css/login.css" /><!--商品列表的样式-->
-    <script src="../js/common.js" type="text/javascript"></script>
-    <script src="../lib/jquery-3.2.1.js" type="text/javascript"></script><!-- 引入jQuery文件 -->
-    <script src="../js/login.js" type="text/javascript"></script><!-- 引入页的js -->
-</head>
-<body>
-    <header id="header">
-        <div class="container clearfix">
-            <div class="left fl">
-                <a href="../index.html"><img src="../img/logo.gif" /></a>
-            </div>
-            <div class="right fr">
-                <ul class="clearfix">
-                    <li><a href="#">登陆</a></li>
-                    <li><a href="#">注册</a></li>
-                    <li><a href="#">我的账号</a></li>
-                    <li><a href="#">购物车</a></li>
-                    <li><a href="#">帮助</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
-    <div id="main">
-        <div class="container">
-            <div class="nav">
-                当前位置：<a href="../index.html">首页</a> &gt; <a href="#">用户中心</a>
-            </div>
-            <div class="cont clearfix">
-                <div class="left fl"></div>
-                <div class="right fl">
-                    <div class="group">
-                        <label for="username">用户名</label><input type="text" id="username" name="username" />
-                        <p class="status">*</p>
-                    </div>
-                    <div class="group">
-                        <label for="email">email</label><input type="email" id="email" name="email" />
-                        <p class="status">*</p>
-                    </div>
-                    <div class="group">
-                        <label for="password">密码</label><input type="password" id="password" name="password" />
-                        <p class="status">*</p>
-                    </div>
-                    <div class="group">
-                        <label>密码强度</label><p class="psdStrong"><span>弱</span><span>中</span><span>强</span></p>
-                    </div>
-                    <div class="group">
-                        <label for="passwordSure">确认密码</label><input type="password" id="passwordSure" name="passwordSure" />
-                        <p class="status">*</p>
-                    </div>
-                    <div class="group">
-                        <label for="vCode">验证码</label><span class="vcode"></span><input type="text" id="vCode" name="vCode" />
-                        <p class="status">*</p>
-                    </div>
-                    <div class="bottom">
-                        <p>
-                            <input type="checkbox" id="selected" name="selected" checked/> 我已看过并接受《<a href="#">用户协议</a>》
-                        </p>
-                        <p>
-                            <button id="btn">立即注册</button><a href="#"><img src="../img/qq_login.png"/></a><br />
-                        </p>
-                        <p>
-                            已经注册有账号？<a href="#">立即登陆</a>
-                        </p>
-                        
+#header{
+    .container{
+        border-bottom: 2px solid #DC5751;
+        .left{}
+        .right{
+            padding-top:40px;
+            ul{
+                li{
+                    float:left;
+                    a{
+                        display:block;
+                        font-size:12px;
+                        height:12px;
+                        line-height:12px;
+                        padding:0 10px;
+                        color:#666666;
+                        border-right:1px solid #666666;
+                    }
+                }
+                li:last-child a{border-right:0 none;}
+            }
+        }
+    }
+}
 
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <footer id="footer">
-        <div class="container ">
-            <div class="top clearfix">
-                <div class="left">
-                    <dl>
-                        <dt>购物指南</dt>
-                        <dd><a href="#">怎样购物</a></dd>
-                        <dd><a href="#">购物保障</a></dd>
-                        <dd><a href="#">购物安全</a></dd>
-                        <dd><a href="#">商品评价</a></dd>
-                    </dl>
-                    <dl>
-                        <dt>配送政策</dt>
-                        <dd><a href="#">配送事件和范围</a></dd>
-                        <dd><a href="#">配送费收取标准</a></dd>
-                        <dd><a href="#">商品签收</a></dd>
-                    </dl>
-                    <dl>
-                        <dt>付款&售后</dt>
-                        <dd><a href="#">第三方网上支付</a></dd>
-                        <dd><a href="#">如何使用优惠卷</a></dd>
-                        <dd><a href="#">退换货原则</a></dd>
-                        <dd><a href="#">退货流程</a></dd>
-                    </dl>
-                    <dl>
-                        <dt>帮助中心</dt>
-                        <dd><a href="#">关于我们</a></dd>
-                        <dd><a href="#">建议意见</a></dd>
-                        <dd><a href="#">联系我们</a></dd>
-                        <dd><a href="#">常见问题</a></dd>
-                    </dl>
-                </div>
-                <div class="right">
-                    <li>
-                        <h3>客服中心热线<i><img src="../img/sellers.png"/></i></h3>
-                        <span>400 011 0001</span>
-                        <p>服务时间:周一至周日9：00-23：30</p>
-                        <div class="erweima"><img src="../img/wei.png"/></div>
-                        <div class="cert"><img src="../img/cert.png"/></div>
-                    </li>
-                </div>                
-            </div>
-            <div class="bottom">
-                <span>友情链接：</span>
-                <a href="#">淘宝代销</a>
-                <a href="#">福建悠悠电子商务有限公司</a>
-                <a href="#">路雪儿</a>
-                <a href="#">鞋团购</a>
-                <a href="#">礼艺网</a>
-                <a href="#">网购节</a>
-                <a href="#">金猴专卖</a>
-                <a href="#">悠悠电商</a>
-                <a href="#">网站目录</a>
-                <a href="#">女装加盟</a>
-                <a href="#">361度官方网站</a>
-                <a href="#">童鞋厂家直批</a>
-                <a href="#">普拉达批发</a>
-                <a href="#">宁波热线</a>
-                <a href="#">b2b电子商务网站</a>
-                <a href="#">安踏</a>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+#main{
+    .container{
+        .nav{
+            color:#999999;
+            line-height:30px;
+            height:30px;
+            font-size:12px;
+            margin-bottom:20px;
+            a{
+                font-size:12px;
+                color:#999999;
+            }
+        }
+        .cont{
+            padding:20px 20px;
+            .left{
+                width: 400px;
+                height:588px;
+                background:url("../img/login.png") no-repeat;
+                background-size:cover;
+            }
+            .right{
+                width:450px;
+                padding:20px 30px 0;
+                .group{
+                    margin-bottom:10px;
+                    position:relative;
+                    label{
+                        display:inline-block;
+                        font-size:12px;
+                        width:60px;
+                        line-height:40px;
+                        text-align:left;
+                        padding-right:10px;
+                       
+                    }
+                    input{
+                        display:inline-block;
+                        border:1px solid #B3B3B3;
+                        height: 30px;
+                        border-radius:5px 5px;
+                        box-shadow:1px 1px 5px 0 #ccc, -1px -1px 5px 0 #ccc;
+                        width:320px;
+                        font-size:14px;
+                    }
+                    .status{position:absolute;left:330px;top:50px;color:red;width: 200px;font-size:12px;}
+                    .active{color:#58bc58;}
+                }
+                .group:nth-child(3){
+                    input{
+                        width:260px;
+                    }
+                    span{
+                        display:inline-block;
+                        width: 60px;
+                        height: 30px;
+                        text-align:center;
+                        line-height:30px;
+                        background-color:#ccc;
+                        vertical-align: middle;
+                    }
+                }
+                .bottom{
+                    font-size:12px;
+                    a{
+                        font-size:12px;
+                        color:#C9570C;
+                    }
+                    p{margin:10px 0;}
+                    p:nth-child(2){
+                        margin:40px 0;
+                        button{
+                            display:inline-block;
+                            background-color:#58bc58;
+                            color:#fff;
+                            width: 140px;
+                            height: 40px;
+                            border-radius:5px 5px ;
+                            box-shadow:2px 2px 5px 0 #ccc;
+                            margin-right:5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

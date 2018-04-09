@@ -167,26 +167,32 @@
 
             if(!$username.next().hasClass('active')){
                 $username.next().text('请填写用户名');
+                return;
             }
 
             if(!$password.next().hasClass('active')){
                 $password.next().text('请填写密码');
+                return;
             }
 
             if(!$email.next().hasClass('active')){
                 $email.next().text('请填写邮箱');
+                return;
             }
 
             if(!$passwordSure.next().hasClass('active')){
                 $passwordSure.next().text('请确认密码');
+                return;
             }
 
             if(!$vCodeInput.next().hasClass('active')){
                 $vCodeInput.next().text('请填写验证码');
+                return;
             }
 
             if(!$selected.prop('checked')){
-                alert('请勾选同意框')
+                alert('请勾选同意框');
+                return;
             }
 
             //所有条件匹配将信息发送数据库保存
@@ -203,7 +209,8 @@
                 },
                 success(data){
                     if(data == 'success'){
-                        alert('注册成功')
+                        alert('注册成功');
+                        location.href = 'login.html';
                     }
                 }
             })
