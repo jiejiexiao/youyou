@@ -1,0 +1,39 @@
+#main{
+    .container{
+        .header{
+            padding:5px 10px;
+            line-height: 36px;
+            color: #999999;
+            font-size:12px;
+            a{color:#999;font-size:12px;margin-right:5px;}
+            span{margin-right:5px;}
+            a:hover{color:orange;}
+            span:hover{color:orange;}
+        }
+        .selected{
+            background-color:#FAFAFA;
+            border:1px solid #E5E5E5;
+            padding:5px 10px;
+            margin-bottom:10px;
+            li{
+                border-bottom:1px dashed #DDDDDD;
+                padding:0 0 0 30px;
+                font-size:12px;line-height:30px;
+                .left{color:#000;font-weight:bold;}
+                .right{
+                    width:850px;
+                    color:#5D89CA;
+                    span{padding:5px 10px;}
+                    .p_left{span{font-weight:bold;}}
+                    .p_right{
+                        width:780px;
+                        span{margin-right:50px;white-space:nowrap;cursor:pointer;padding:5px 10px;}    
+                    }
+                    span:hover{text-decoration:underline;}
+                    .active{color:#fff;background-color:red;}
+                }
+            }
+        }
+        .goodLists{}
+    }
+}

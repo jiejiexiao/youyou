@@ -1,0 +1,153 @@
+#header .container {
+  border-bottom: 2px solid #DC5751;
+}
+
+#header .container .right {
+  padding-top: 40px;
+}
+
+#header .container .right ul li {
+  float: left;
+}
+
+#header .container .right ul li a {
+  display: block;
+  font-size: 12px;
+  height: 12px;
+  line-height: 12px;
+  padding: 0 10px;
+  color: #666666;
+  border-right: 1px solid #666666;
+}
+
+#header .container .right ul li:last-child a {
+  border-right: 0 none;
+}
+
+#main .container .nav {
+  color: #999999;
+  line-height: 30px;
+  height: 30px;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+#main .container .nav a {
+  font-size: 12px;
+  color: #999999;
+}
+
+#main .container .cont {
+  padding: 20px 20px;
+}
+
+#main .container .cont .left {
+  width: 400px;
+  height: 588px;
+  background: url("../img/reg.png") no-repeat;
+  background-size: cover;
+}
+
+#main .container .cont .right {
+  width: 450px;
+  padding: 20px 10px 0;
+}
+
+#main .container .cont .right .group {
+  height: 40px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+#main .container .cont .right .group label {
+  display: inline-block;
+  font-size: 12px;
+  width: 60px;
+  line-height: 40px;
+  text-align: right;
+  padding-right: 10px;
+}
+
+#main .container .cont .right .group input {
+  display: inline-block;
+  border: 1px solid #B3B3B3;
+  height: 30px;
+  border-radius: 5px 5px;
+  box-shadow: 1px 1px 5px 0 #ccc, -1px -1px 5px 0 #ccc;
+  width: 320px;
+  font-size: 14px;
+}
+
+#main .container .cont .right .group .status {
+  position: absolute;
+  left: 400px;
+  top: 10px;
+  color: red;
+  width: 200px;
+  font-size: 12px;
+}
+
+#main .container .cont .right .group .active {
+  color: #58bc58;
+}
+
+#main .container .cont .right .group:nth-child(4) p {
+  display: inline-block;
+}
+
+#main .container .cont .right .group:nth-child(4) p span {
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 2px solid #ccc;
+  text-align: center;
+  font-size: 12px;
+}
+
+#main .container .cont .right .group:nth-child(4) p .activePsd {
+  border-bottom: 2px solid red;
+}
+
+#main .container .cont .right .group:nth-child(6) input {
+  width: 260px;
+}
+
+#main .container .cont .right .group:nth-child(6) span {
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  background-color: #58bc58;
+  vertical-align: middle;
+}
+
+#main .container .cont .right .bottom {
+  padding-left: 70px;
+  font-size: 12px;
+}
+
+#main .container .cont .right .bottom a {
+  font-size: 12px;
+  color: blue;
+}
+
+#main .container .cont .right .bottom p {
+  margin: 10px 0;
+}
+
+#main .container .cont .right .bottom p:nth-child(2) {
+  margin-bottom: 40px;
+}
+
+#main .container .cont .right .bottom p:nth-child(2) button {
+  display: inline-block;
+  background-color: orange;
+  color: #fff;
+  width: 160px;
+  height: 40px;
+  border-radius: 5px 5px;
+  box-shadow: 2px 2px 5px 0 #ccc;
+  margin-right: 5px;
+}

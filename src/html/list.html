@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>商品列表</title>
+    <link rel="stylesheet" type="text/css" href="../css/base.css" /><!-- 公共样式 -->
+    <link rel="stylesheet" type="text/css" href="../css/common.css" /><!-- 公用部分 -->
+    <link rel="stylesheet" type="text/css" href="../css/list.css" /><!--商品列表的样式-->
+    <script src="../js/common.js" type="text/javascript"></script>
+    <script src="../lib/jquery-3.2.1.js" type="text/javascript"></script><!-- 引入jQuery文件 -->
+    <script src="../js/list.js" type="text/javascript"></script><!-- 引入商品列表页的js -->
+</head>
+<body>
+    <header id="header">
+        <div class="h_top">
+            <img src="../img/top_img.jpg" alt="" />
+        </div>
+        <div class="h_center">
+            <div class="container clearfix">
+                <div class="c_left fl"><a href="#">收藏本站</a></div>
+                <div class="c_right fr">
+                    <ul class="clearfix">
+                        <li><a href="#">登陆</a></li>
+                        <li><a href="#">注册</a></li>
+                        <li><a href="#">购物车</a></li>
+                        <li><a href="#">帮助</a></li>
+                        <li><a href="#">网站公告</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="h_bottom">
+            <div class="container clearfix">
+                <div class="b_left fl">
+                    <img src="../img/logobuy.gif" />
+                </div>
+                <div class="b_right fr clearfix">
+                    <div class="left fl">
+                        <input class="input" type="text" value="商品名称、品牌、编号"/>
+                        <input class="btn" type="button" value="搜索"/>
+                    </div>
+                    <div class="right fr" >
+                        <i><img src="../img/shop_cart.png"/></i>
+                        <span>0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav id="nav">
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="#">男运动鞋</a></li>
+                <li><a href="#">女运动鞋</a></li>
+                <li><a href="#">男装</a></li>
+                <li><a href="#">女装</a></li>
+                <li><a href="#">新品</a></li>
+                <li><a href="#">毛巾</a></li>
+                <li><a href="#">品牌馆</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div id="main">
+        <div class="container">
+            <div class="header">
+                当前位置<a href="../index.html">&gt; 首页</a><span class="one">&gt; 运动鞋</span><span class="two">&gt; 男鞋</span>
+            </div>
+            <ul class="selected">
+                <li class="clearfix">
+                    <div class="left fl">分类 ：</div>
+                    <div class="right fl">
+                        <div class="clearfix line">
+                            <div class="p_left fl">
+                                <span class="active">男鞋</span>
+                            </div>
+                            <div class="p_right fl">
+                                <span>板鞋</span>
+                                <span>跑鞋</span>
+                                <span>篮球鞋</span>
+                                <span>综合训练鞋</span>
+                                <span>帆布鞋</span>
+                                <span>休闲鞋</span>
+                                <span>户外鞋</span>
+                                <span>网球鞋</span>
+                                <span>足球鞋</span>
+                                <span>凉鞋</span>
+                                <span>拖鞋</span> 
+                            </div>                            
+                        </div>
+                        <div class="clearfix line">
+                            <div class="p_left fl">
+                                <span>女鞋</span>
+                            </div>
+                            <div class="p_right fl">
+                                <span>板鞋</span>
+                                <span>跑鞋</span>
+                                <span>帆布鞋</span>
+                                <span>休闲鞋</span>
+                                <span>户外鞋</span>
+                                <span>网球鞋</span>
+                                <span>综合训练鞋</span>
+                                <span>凉鞋</span>
+                                <span>拖鞋</span>                                
+                            </div>                            
+                        </div>
+                        <div class="clearfix line">
+                            <div class="p_left fl">
+                                <span>童鞋</span>
+                            </div>
+                            <div class="p_right fl">                               
+                            </div>                            
+                        </div>
+                        <div class="clearfix line">
+                            <div class="p_left fl">
+                                <span>情侣鞋</span>
+                            </div>
+                            <div class="p_right fl">
+                                <span>板鞋</span>
+                                <span>跑步鞋</span>
+                                <span>休闲鞋</span>
+                                <span>网球鞋</span>                               
+                            </div>                            
+                        </div>                        
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="left fl">品牌 ：</div>
+                    <div class="right fl">
+                        <div class="clearfix line">
+                            <div class="p_left fl">
+                                <span class="active">全部</span>
+                            </div>
+                            <div class="p_right fl">
+                                <span>匹克</span>
+                                <span>361</span>
+                                <span>特步</span>
+                                <span>乔丹</span>
+                                <span>李宁</span>
+                                <span>鸿星尔克</span>
+                            </div>                            
+                        </div>                     
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="left fl">价格 ：</div>
+                    <div class="right fl">
+                        <div class="clearfix line">
+                            <div class="p_left fl">
+                                <span class="active">全部</span>
+                            </div>
+                            <div class="p_right fl">
+                                <span>40 - 160</span>
+                                <span>160 - 280</span>
+                                <span>280 - 400</span>
+                                <span>400 - 520</span>
+                                <span>520 - 640</span>
+                            </div>                            
+                        </div>                    
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="left fl">尺码 ：</div>
+                    <div class="right fl">
+                        <div class="clearfix line">
+                            <div class="p_left fl">
+                                <span class="active">全部</span>
+                            </div>
+                            <div class="p_right fl">
+                                <span>26</span>
+                                <span>27</span>
+                                <span>28</span>
+                                <span>29</span>
+                                <span>30</span>
+                                <span>31</span>
+                                <span>32</span>
+                                <span>33</span>
+                                <span>34</span>
+                                <span>35</span>
+                                <span>36</span>
+                                <span>37</span>
+                                <span>38</span>
+                                <span>39</span>
+                                <span>40</span>
+                                <span>41</span>
+                                <span>42</span>
+                                <span>43</span>
+                                <span>44</span>
+                                <span>45</span>
+                                <span>46</span>
+                                <span>47</span>
+                            </div>                            
+                        </div>                    
+                    </div>
+                </li>
+            </ul>
+            <div class="goodLists"></div>
+        </div>
+    </div>
+    <footer id="footer">
+        <div class="container ">
+            <div class="top clearfix">
+                <div class="left">
+                    <dl>
+                        <dt>购物指南</dt>
+                        <dd><a href="#">怎样购物</a></dd>
+                        <dd><a href="#">购物保障</a></dd>
+                        <dd><a href="#">购物安全</a></dd>
+                        <dd><a href="#">商品评价</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>配送政策</dt>
+                        <dd><a href="#">配送事件和范围</a></dd>
+                        <dd><a href="#">配送费收取标准</a></dd>
+                        <dd><a href="#">商品签收</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>付款&售后</dt>
+                        <dd><a href="#">第三方网上支付</a></dd>
+                        <dd><a href="#">如何使用优惠卷</a></dd>
+                        <dd><a href="#">退换货原则</a></dd>
+                        <dd><a href="#">退货流程</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>帮助中心</dt>
+                        <dd><a href="#">关于我们</a></dd>
+                        <dd><a href="#">建议意见</a></dd>
+                        <dd><a href="#">联系我们</a></dd>
+                        <dd><a href="#">常见问题</a></dd>
+                    </dl>
+                </div>
+                <div class="right">
+                    <li>
+                        <h3>客服中心热线<i><img src="../img/sellers.png"/></i></h3>
+                        <span>400 011 0001</span>
+                        <p>服务时间:周一至周日9：00-23：30</p>
+                        <div class="erweima"><img src="../img/wei.png"/></div>
+                        <div class="cert"><img src="../img/cert.png"/></div>
+                    </li>
+                </div>                
+            </div>
+            <div class="bottom">
+                <span>友情链接：</span>
+                <a href="#">淘宝代销</a>
+                <a href="#">福建悠悠电子商务有限公司</a>
+                <a href="#">路雪儿</a>
+                <a href="#">鞋团购</a>
+                <a href="#">礼艺网</a>
+                <a href="#">网购节</a>
+                <a href="#">金猴专卖</a>
+                <a href="#">悠悠电商</a>
+                <a href="#">网站目录</a>
+                <a href="#">女装加盟</a>
+                <a href="#">361度官方网站</a>
+                <a href="#">童鞋厂家直批</a>
+                <a href="#">普拉达批发</a>
+                <a href="#">宁波热线</a>
+                <a href="#">b2b电子商务网站</a>
+                <a href="#">安踏</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

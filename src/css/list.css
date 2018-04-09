@@ -1,0 +1,76 @@
+#main .container .header {
+  padding: 5px 10px;
+  line-height: 36px;
+  color: #999999;
+  font-size: 12px;
+}
+
+#main .container .header a {
+  color: #999;
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+#main .container .header span {
+  margin-right: 5px;
+}
+
+#main .container .header a:hover {
+  color: orange;
+}
+
+#main .container .header span:hover {
+  color: orange;
+}
+
+#main .container .selected {
+  background-color: #FAFAFA;
+  border: 1px solid #E5E5E5;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+#main .container .selected li {
+  border-bottom: 1px dashed #DDDDDD;
+  padding: 0 0 0 30px;
+  font-size: 12px;
+  line-height: 30px;
+}
+
+#main .container .selected li .left {
+  color: #000;
+  font-weight: bold;
+}
+
+#main .container .selected li .right {
+  width: 850px;
+  color: #5D89CA;
+}
+
+#main .container .selected li .right span {
+  padding: 5px 10px;
+}
+
+#main .container .selected li .right .p_left span {
+  font-weight: bold;
+}
+
+#main .container .selected li .right .p_right {
+  width: 780px;
+}
+
+#main .container .selected li .right .p_right span {
+  margin-right: 50px;
+  white-space: nowrap;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+#main .container .selected li .right span:hover {
+  text-decoration: underline;
+}
+
+#main .container .selected li .right .active {
+  color: #fff;
+  background-color: red;
+}
