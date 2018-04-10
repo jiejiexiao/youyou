@@ -34,6 +34,39 @@
                 }
             }
         }
-        .goodLists{}
+        .show{
+            min-height: 200px;
+            border: 1px solid #e1e1e1;
+            border-top: 1px solid #A21F24;
+            .top{
+                .nav{
+                    li{
+                        float:left;
+                        width: 100px;
+                        list-style:none;
+                        border-right:1px solid #e1e1e1;
+                        line-height:30px;
+                        text-align:center;
+                        color: #343434;
+                        font-size:14px;
+                    }
+                    .active{
+                        border-bottom: 1px solid #fff;
+                        margin-bottom: -1px;
+                        color:#990000;
+                    }
+                }
+            }
+            .goodLists{
+                border-top:1px solid #e1e1e1;
+                min-height:200px;
+                padding:5px;
+                li{
+                    float:left;
+                    width:240px;
+                    height:350px;
+                }
+            }
+        }
     }
 }

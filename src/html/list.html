@@ -6,9 +6,7 @@
     <link rel="stylesheet" type="text/css" href="../css/base.css" /><!-- 公共样式 -->
     <link rel="stylesheet" type="text/css" href="../css/common.css" /><!-- 公用部分 -->
     <link rel="stylesheet" type="text/css" href="../css/list.css" /><!--商品列表的样式-->
-    <script src="../js/common.js" type="text/javascript"></script>
-    <script src="../lib/jquery-3.2.1.js" type="text/javascript"></script><!-- 引入jQuery文件 -->
-    <script src="../js/list.js" type="text/javascript"></script><!-- 引入商品列表页的js -->
+    <script src="../js/require.js" data-main="../js/list.js"></script>
 </head>
 <body>
     <header id="header">
@@ -20,8 +18,8 @@
                 <div class="c_left fl"><a href="#">收藏本站</a></div>
                 <div class="c_right fr">
                     <ul class="clearfix">
-                        <li><a href="#">登陆</a></li>
-                        <li><a href="#">注册</a></li>
+                        <li><a href="login.html">登陆</a></li>
+                        <li><a href="reg.html">注册</a></li>
                         <li><a href="#">购物车</a></li>
                         <li><a href="#">帮助</a></li>
                         <li><a href="#">网站公告</a></li>
@@ -194,7 +192,20 @@
                     </div>
                 </li>
             </ul>
-            <div class="goodLists"></div>
+            <div class="show">
+                <div class="top">
+                    <div class="nav clearfix">
+                        <li>最近更新</li>     
+                        <li>最低价</li>
+                        <li>最高价</li>
+                        <li class="active">最新上市</li>
+                        <li>销量最高</li>
+                    </div>
+                </div>
+                <ul class="goodLists">
+                    
+                </ul>
+            </div>
         </div>
     </div>
     <footer id="footer">

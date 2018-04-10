@@ -74,3 +74,38 @@
   color: #fff;
   background-color: red;
 }
+
+#main .container .show {
+  min-height: 200px;
+  border: 1px solid #e1e1e1;
+  border-top: 1px solid #A21F24;
+}
+
+#main .container .show .top .nav li {
+  float: left;
+  width: 100px;
+  list-style: none;
+  border-right: 1px solid #e1e1e1;
+  line-height: 30px;
+  text-align: center;
+  color: #343434;
+  font-size: 14px;
+}
+
+#main .container .show .top .nav .active {
+  border-bottom: 1px solid #fff;
+  margin-bottom: -1px;
+  color: #990000;
+}
+
+#main .container .show .goodLists {
+  border-top: 1px solid #e1e1e1;
+  min-height: 200px;
+  padding: 5px;
+}
+
+#main .container .show .goodLists li {
+  float: left;
+  width: 240px;
+  height: 350px;
+}
