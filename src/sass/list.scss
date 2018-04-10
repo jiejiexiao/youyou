@@ -65,7 +65,33 @@
                     float:left;
                     width:240px;
                     height:350px;
+                    font-size:12px;
+                    margin: 0 2px;
+                    box-sizing:border-box;
+                    border:1px solid #fff;
+                    img{
+                        display:block;
+                        width: 230px;
+                        margin: 5px auto;
+                    }
+                    p{
+                        color: #4D4D4D;
+                        .price{
+                            color: #990000;
+                            font-size:14px;
+                        }
+                        .counts{
+                            float:right;
+                            color:#999999;
+                            padding-right:10px;
+                        }
+                    }
+                    p:nth-of-type(1){
+                        margin-bottom:15px;
+                        letter-spacing:1px;
+                    }
                 }
+                .active{background-color:#F4F4F4;border-color:#cccccc;}
             }
         }
     }

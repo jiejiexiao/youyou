@@ -108,4 +108,39 @@
   float: left;
   width: 240px;
   height: 350px;
+  font-size: 12px;
+  margin: 0 2px;
+  box-sizing: border-box;
+  border: 1px solid #fff;
+}
+
+#main .container .show .goodLists li img {
+  display: block;
+  width: 230px;
+  margin: 5px auto;
+}
+
+#main .container .show .goodLists li p {
+  color: #4D4D4D;
+}
+
+#main .container .show .goodLists li p .price {
+  color: #990000;
+  font-size: 14px;
+}
+
+#main .container .show .goodLists li p .counts {
+  float: right;
+  color: #999999;
+  padding-right: 10px;
+}
+
+#main .container .show .goodLists li p:nth-of-type(1) {
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+#main .container .show .goodLists .active {
+  background-color: #F4F4F4;
+  border-color: #cccccc;
 }
