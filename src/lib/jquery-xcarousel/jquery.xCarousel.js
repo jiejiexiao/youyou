@@ -23,8 +23,11 @@
 
 			let $self = $(this);
 
+			
 			// let opt = Object.assign({},defaults,options);
 			let opt = $.extend(true,{},defaults,options);//深复制
+
+
 
 			opt.len = opt.imgs.length;
 			if(opt.seamless){

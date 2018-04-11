@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>商品详情页</title>
+    <link rel="stylesheet" type="text/css" href="../css/base.css" /><!-- 公共样式 -->
+    <link rel="stylesheet" type="text/css" href="../css/common.css" /><!-- 公用部分 -->
+    <link rel="stylesheet" type="text/css" href="../css/goodDetail.css" /><!--商品列表的样式-->
+    <link rel="stylesheet" type="text/css" href="../lib/jquery-xZoom/jquery.xZoom.css" />
+    <script src="../js/require.js" data-main="../js/goodDetail.js"></script>
+</head>
+<body>
+    <header id="header">
+        <div class="h_top">
+            <img src="../img/top_img.jpg" alt="" />
+        </div>
+        <div class="h_center">
+            <div class="container clearfix">
+                <div class="c_left fl"><a href="#">收藏本站</a></div>
+                <div class="c_right fr">
+                    <ul class="clearfix">
+                        <li><a href="login.html">登陆</a></li>
+                        <li><a href="reg.html">注册</a></li>
+                        <li><a href="#">购物车</a></li>
+                        <li><a href="#">帮助</a></li>
+                        <li><a href="#">网站公告</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="h_bottom">
+            <div class="container clearfix">
+                <div class="b_left fl">
+                    <img src="../img/logobuy.gif" />
+                </div>
+                <div class="b_right fr clearfix">
+                    <div class="left fl">
+                        <input class="input" type="text" value="商品名称、品牌、编号"/>
+                        <input class="btn" type="button" value="搜索"/>
+                    </div>
+                    <div class="right fr" >
+                        <i><img src="../img/shop_cart.png"/></i>
+                        <span>0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav id="nav">
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="#">男运动鞋</a></li>
+                <li><a href="#">女运动鞋</a></li>
+                <li><a href="#">男装</a></li>
+                <li><a href="#">女装</a></li>
+                <li><a href="#">新品</a></li>
+                <li><a href="#">毛巾</a></li>
+                <li><a href="#">品牌馆</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div id="main">
+        <div class="container">
+            <div class="header">
+                当前位置&gt;<a href="../index.html"> 首页</a>&gt; <span class="one">运动鞋</span>&gt; <span class="two">男鞋</span>&gt; <span class="three"></span>
+            </div>
+            <div class="show clearfix">
+                <div class="left fl"></div>
+                <div class="right fr">
+                    <p class="title"></p>
+                    <ul>
+                        <li>市场价格：<span class="marketPrice"></span></li>
+                        <li>商城价：<span class="shopPrice"></span></li>
+                        <li>悠悠金服价：<span class="youyouPrice"></span></li>
+                        <li>用户评价：<img src="../img/stars5.gif"/></li>
+                        <li>商品品牌：<span class="brand"></span><a href="list.html">更多款式 &gt;</a></li>
+                        <li>销售量：<span class="counts">0</span>件</li>
+                    </ul>
+                    <div class="selected">
+                        <p class="imgColor">颜色：</p>
+                        <p>尺码：<span>36</span><span>37</span><span>38</span><span>39</span><span>40</span><span>41</span><span>42</span><span>43</span><span>44</span></p>
+                        <p>数量：<a class="jian">-</a><input type="text" id="counts"/><a class="jia">+</a>库存<span class="kucun">0</span></p>
+                        <button id="btnAdd">添加到购物车</button>
+                    </div>
+                    <div class="bottom">
+                        <ul class="clearfix">
+                            <li>服务承诺：</li>
+                            <li>正品保证</li>
+                            <li>便捷退换</li>
+                            <li>支付方式：</li>
+                            <li>支付宝</li>
+                            <li>网银支付</li>
+                            <li>悠悠金服支付</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <footer id="footer">
+        <div class="container ">
+            <div class="top clearfix">
+                <div class="left">
+                    <dl>
+                        <dt>购物指南</dt>
+                        <dd><a href="#">怎样购物</a></dd>
+                        <dd><a href="#">购物保障</a></dd>
+                        <dd><a href="#">购物安全</a></dd>
+                        <dd><a href="#">商品评价</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>配送政策</dt>
+                        <dd><a href="#">配送事件和范围</a></dd>
+                        <dd><a href="#">配送费收取标准</a></dd>
+                        <dd><a href="#">商品签收</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>付款&售后</dt>
+                        <dd><a href="#">第三方网上支付</a></dd>
+                        <dd><a href="#">如何使用优惠卷</a></dd>
+                        <dd><a href="#">退换货原则</a></dd>
+                        <dd><a href="#">退货流程</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>帮助中心</dt>
+                        <dd><a href="#">关于我们</a></dd>
+                        <dd><a href="#">建议意见</a></dd>
+                        <dd><a href="#">联系我们</a></dd>
+                        <dd><a href="#">常见问题</a></dd>
+                    </dl>
+                </div>
+                <div class="right">
+                    <li>
+                        <h3>客服中心热线<i><img src="../img/sellers.png"/></i></h3>
+                        <span>400 011 0001</span>
+                        <p>服务时间:周一至周日9：00-23：30</p>
+                        <div class="erweima"><img src="../img/wei.png"/></div>
+                        <div class="cert"><img src="../img/cert.png"/></div>
+                    </li>
+                </div>                
+            </div>
+            <div class="bottom">
+                <span>友情链接：</span>
+                <a href="#">淘宝代销</a>
+                <a href="#">福建悠悠电子商务有限公司</a>
+                <a href="#">路雪儿</a>
+                <a href="#">鞋团购</a>
+                <a href="#">礼艺网</a>
+                <a href="#">网购节</a>
+                <a href="#">金猴专卖</a>
+                <a href="#">悠悠电商</a>
+                <a href="#">网站目录</a>
+                <a href="#">女装加盟</a>
+                <a href="#">361度官方网站</a>
+                <a href="#">童鞋厂家直批</a>
+                <a href="#">普拉达批发</a>
+                <a href="#">宁波热线</a>
+                <a href="#">b2b电子商务网站</a>
+                <a href="#">安踏</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

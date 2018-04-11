@@ -13,7 +13,7 @@ require(['config'],function(){
 
 
                 //获取页面屏幕大小
-                let widthVisite = $(document).width();
+                let widthVisite = $(window).width();
                 //通过xCarousel插件生成轮播图
                 $banner.xCarousel({
                     width:widthVisite,
@@ -23,6 +23,20 @@ require(['config'],function(){
                     seamless:true,
                     page:true
                 })
+                //carousel自适应
+                $(window).on('resize',function(){
+                    widthVisite = $(window).width();
+                    $banner.html('');
+                    $banner.xCarousel({
+                        width:widthVisite,
+                        height:700,
+                        type:'fade',
+                        imgs:['img/20161220srhdhj.jpg','img/20161228qlksse.jpg','img/20170112dexkdc.jpg','img/20170508rrufts.gif'],
+                        seamless:true,
+                        page:true
+                    })
+                })
+
 
                 //给搜索框绑定事件
                 let text = $search.val();

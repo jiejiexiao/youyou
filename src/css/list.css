@@ -90,6 +90,7 @@
   text-align: center;
   color: #343434;
   font-size: 14px;
+  cursor: pointer;
 }
 
 #main .container .show .top .nav .active {
@@ -136,6 +137,7 @@
 }
 
 #main .container .show .goodLists li p:nth-of-type(1) {
+  height: 45px;
   margin-bottom: 15px;
   letter-spacing: 1px;
 }
@@ -143,4 +145,23 @@
 #main .container .show .goodLists .active {
   background-color: #F4F4F4;
   border-color: #cccccc;
+}
+
+#main .container #page {
+  text-align: center;
+}
+
+#main .container #page span {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid #ccc;
+  margin: 0 5px;
+}
+
+#main .container #page .active {
+  background: orange;
 }

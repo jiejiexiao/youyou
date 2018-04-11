@@ -5,41 +5,132 @@ require(["config"],function(){
             $(function($){
                 //获取页面元素
                 let $goodLists = $('.goodLists');
+                let $nav = $goodLists.prev().children();
+                let $page = $('#page');
+                let goods;//全局变量页面的数据
                 //向数据库获取数据
+                let qty = 20;//每页显示的条数
+                let pages;
+                let orders = ['update','lower','upper','new','sell'];//编写传入后台的数据
+                let idx;
+
+                //ajax加载数据
                 $.ajax({
                     url:'../api/goodsList.php',
-                    data:{},
+                    data:{
+                        type:'new',
+                        qty:qty,
+                    },
                     success(data){   
                         //将json字符串——》数组             
-                        let goods = JSON.parse(data);console.log(goods)
-                        
+                        goods = JSON.parse(data).data;
+                        let counts = JSON.parse(data).counts;
                         //得到数据，根据数据生成html
-                        let $res = $.map(goods,function(item,idx){
-                            let $li = $('<li/>');
-                            $li.attr('data-id',item.id)
-                            $li.html(
-                                `<img src="../img/${item.img}"/>
-                                <p>${item.brand}${item.classifyForhuman}${item.classifyForshoe}${item.goodsName} ${item.color}</p>
-                                <p>本店价<span class="price">${item.youyouPrice}</span><span class="counts">售出（0）件</span></p>
-                                `
-                            );
-                            return $li;
-                        })
-                        $goodLists.append($res);
+                        createTable(goods);
 
-                        //绑定事件
-                        $goodLists.on('mouseenter','li',function(){
-                            $(this).addClass('active');
-                        }).on('mouseleave','li',function(){
-                            $(this).removeClass('active');
-                        })
-
+                        //产生分页
+                        var len = Math.ceil(counts/qty);//页码数量
+                        for(let i=0;i<len;i++){
+                            let $span = $('<span/>');
+                            $span.text(i+1);//页码
+                            if(i==0){//默认第一个高亮
+                                $span.addClass('active');
+                            }
+                            $page.append($span);
+                        }
                     }
                 })
-         
+
+                //绑定事件给商品添加样式
+                $goodLists.on('mouseenter','li',function(){
+                    $(this).addClass('active');
+                }).on('mouseleave','li',function(){
+                    $(this).removeClass('active');
+                })
+
+                //点击商品跳转到详情页
+                .on('click','li',function(){
+                    let id = $(this).attr('data-id');//获取id
+                    location.href = "goodDetail.html?id="+id;//跳转传参
+                })
+
+                //点击分页切换
+                $page.on('click','span',function(){
+                    $(this).addClass('active').siblings().removeClass('active');//tab切换
+                    //获取页码
+                    page = $(this).text();
+                    //传输页码和页码数量参数
+                    ajax({
+                        url:'../api/goodsList.php',
+                        data:{
+                            page:page,
+                            qty:qty,
+                            type:orders[idx]
+                        },
+                        success(data){
+                            goods = data.data;
+                            // //得到数据，根据数据生成html
+                            createTable(goods);
+                        }
+                    })
+                })
 
 
+                //点击进行价格排序   
+                $nav.on('click','li',function(){
+                    $(this).addClass('active').siblings().removeClass('active');//tab高亮切换
+                    //遍历获取当前索引值
+                    for(let i=0;i<orders.length;i++){
+                        if($nav.children().eq(i).get(0)==this){
+                            idx=i;
+                        }
+                    }
 
+                    //发起ajax请求
+                    $.ajax({
+                        url:'../api/goodsList.php',
+                        data:{
+                            type:orders[idx],
+                        },
+                        success(data){   
+                        //将json字符串——》数组             
+                        goods = JSON.parse(data).data;
+                        let counts = JSON.parse(data).counts;
+                        //得到数据，根据数据生成html
+                        createTable(goods);
+
+                        //产生分页
+                        $page.html('');//清空页码
+                        var len = Math.ceil(counts/qty);//页码数量
+                        for(let i=0;i<len;i++){
+                            let $span = $('<span/>');
+                            $span.text(i+1);//页码
+                            if(i==0){//默认第一个高亮
+                                $span.addClass('active');
+                            }
+                            $page.append($span);
+                        }
+                    }
+                    })
+                })     
+
+
+                //封装根据数据生成数据列表
+                function createTable(goods){
+                    $goodLists.html('');
+                    let $res = $.map(goods,function(item,idx){
+                        let $li = $('<li/>');
+                        $li.attr('data-id',item.id)
+                        $li.html(
+                            `<img src="../img/${item.img}"/>
+                            <p>${item.brand}${item.classifyForhuman}${item.classifyForshoe}${item.goodsName} ${item.color}</p>
+                            <p>本店价<span class="price">${item.youyouPrice}</span><span class="counts">售出（0）件</span></p>
+                            `
+                        );
+                        return $li;
+                    })
+                    $goodLists.append($res);
+                }
                 
             })
         }(jQuery));        

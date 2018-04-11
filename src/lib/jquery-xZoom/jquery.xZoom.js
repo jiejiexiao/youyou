@@ -6,7 +6,7 @@
         let defaults = {
             width:400,//可视效果宽度
             gap:10,//间隙
-            position:'right',//left,top,bottom,right
+            position:'right',//left,top,bottom,right,inner
             ratio: 3.5,
             scale:2 ,//设置缩放比例
             change:false//如果只改变图片要设置true
@@ -72,6 +72,7 @@
                     .on('mousemove',function(e){
                         descript.follow(e);
                     })
+
                 },//显示容器和放大镜
                 show(){
                     $zoom.show();
