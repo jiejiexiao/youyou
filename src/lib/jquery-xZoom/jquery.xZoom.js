@@ -35,8 +35,8 @@
                     
 
 
-                    //获取展示区图片
-                    $smallImg = $self.children('img');console.log($smallImg.data().big)
+                    //获取展示区图片      console.log($smallImg.data().big)
+                    $smallImg = $self.children('img');
                     //移除上一次页面上产生的元素
                     if(opt.change){
                         $self.find('.zoom').remove();

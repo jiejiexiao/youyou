@@ -1,0 +1,78 @@
+#main .container .header {
+  padding: 5px 10px;
+  line-height: 36px;
+  color: #999999;
+  font-size: 12px;
+}
+
+#main .container .header a {
+  color: #999;
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+#main .container .header span {
+  margin-right: 5px;
+}
+
+#main .container .step {
+  margin-bottom: 40px;
+  background-color: #D0D0D0;
+  position: relative;
+}
+
+#main .container .step li {
+  position: relative;
+  float: left;
+  width: 140px;
+  line-height: 40px;
+  font-size: 14px;
+  color: #747474;
+  font-weight: bold;
+  height: 40px;
+  margin-right: 20px;
+  vertical-align: middle;
+}
+
+#main .container .step li span {
+  font-size: 18px;
+  vertical-align: top;
+  padding: 0 5px 0 10px;
+}
+
+#main .container .step li i {
+  position: absolute;
+  display: block;
+  width: 0;
+  border: 20px solid transparent;
+}
+
+#main .container .step li .minT {
+  right: -44px;
+  top: -5px;
+  border-left-color: #fff;
+  border-width: 25px;
+}
+
+#main .container .step li .maxT {
+  right: -33px;
+  top: 0px;
+  border-left-color: #D0D0D0;
+}
+
+#main .container .step li .change {
+  border-left-color: #B8596F;
+}
+
+#main .container .step .active {
+  color: #fff;
+  background-color: #B8596F;
+}
+
+#main .container .step img {
+  position: absolute;
+  display: block;
+  height: 50px;
+  right: 30px;
+  top: -10px;
+}

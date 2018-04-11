@@ -5,9 +5,8 @@
     <title>商品详情页</title>
     <link rel="stylesheet" type="text/css" href="../css/base.css" /><!-- 公共样式 -->
     <link rel="stylesheet" type="text/css" href="../css/common.css" /><!-- 公用部分 -->
-    <link rel="stylesheet" type="text/css" href="../css/goodDetail.css" /><!--商品列表的样式-->
-    <link rel="stylesheet" type="text/css" href="../lib/jquery-xZoom/jquery.xZoom.css" />
-    <script src="../js/require.js" data-main="../js/goodDetail.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/car.css" /><!--商品列表的样式-->
+    <script src="../js/require.js" data-main="../js/car.js"></script>
 </head>
 <body>
     <header id="header">
@@ -63,39 +62,19 @@
     <div id="main">
         <div class="container">
             <div class="header">
-                当前位置&gt;<a href="../index.html"> 首页</a>&gt; <span class="one"></span>&gt; <span class="two"></span>&gt; <span class="three"></span>
+                当前位置&gt;<a href="../index.html"> 首页</a>&gt; <span class="one">购物流程</span>
             </div>
-            <div class="show clearfix">
-                <div class="left fl"></div>
-                <div class="right fr">
-                    <p class="title"></p>
-                    <ul>
-                        <li>市场价格：<span class="marketPrice"></span></li>
-                        <li>商城价：<span class="shopPrice"></span></li>
-                        <li>悠悠金服价：<span class="youyouPrice"></span></li>
-                        <li>用户评价：<img src="../img/stars5.gif"/></li>
-                        <li>商品品牌：<span class="brand"></span><a href="list.html">更多款式 &gt;</a></li>
-                        <li>销售量：<span class="counts">0</span>件</li>
-                    </ul>
-                    <div class="selected">
-                        <p class="imgColor">颜色：</p>
-                        <p>尺码：<span>36</span><span>37</span><span>38</span><span>39</span><span>40</span><span>41</span><span>42</span><span>43</span><span>44</span></p>
-                        <p>数量：<a class="jian">-</a><input type="text" id="counts"/><a class="jia">+</a>库存<span class="kucun">0</span></p>
-                        <button id="btnAdd">添加到购物车</button>
-                    </div>
-                    <div class="bottom">
-                        <ul class="clearfix">
-                            <li>服务承诺：</li>
-                            <li>正品保证</li>
-                            <li>便捷退换</li>
-                            <li>支付方式：</li>
-                            <li>支付宝</li>
-                            <li>网银支付</li>
-                            <li>悠悠金服支付</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>            
+            <ul class="step clearfix">
+                    <li class="active"><i class="minT"></i><i class="maxT change"></i><span>1</span>查看购物车</li>
+                    <li><i class="minT"></i><i class="maxT"></i><span>2</span>用户登陆或注册</li>
+                    <li><i class="minT"></i><i class="maxT"></i><span>3</span>填写购物信息</li>
+                    <li><i class="minT"></i><i class="maxT"></i><span>4</span>完成订单</li>
+                    <img src="../img/carImg.png" alt="" />
+            </ul>
+            <div class="main">
+                <div class="main_header"></div>
+                <div class="main_cont"></div>
+            </div>          
         </div>
     </div>
     <footer id="footer">
