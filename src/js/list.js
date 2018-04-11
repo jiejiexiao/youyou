@@ -7,19 +7,36 @@ require(["config"],function(){
                 let $goodLists = $('.goodLists');
                 let $nav = $goodLists.prev().children();
                 let $page = $('#page');
+                let $selected = $('#main .selected');
+                let $right = $selected.find('.right');
                 let goods;//全局变量页面的数据
                 //向数据库获取数据
                 let qty = 20;//每页显示的条数
                 let pages;
                 let orders = ['update','lower','upper','new','sell'];//编写传入后台的数据
                 let idx;
+                //用于搜索的参数
+                let classify = '男鞋';
+                let brand = '全部';
+                let priceRang = '全部';
+                let priceRangMin;
+                let priceRangMax;
+                let size;
 
-                //ajax加载数据
+
+                //初始化ajax加载数据
                 $.ajax({
                     url:'../api/goodsList.php',
                     data:{
                         type:'new',
                         qty:qty,
+                        classify:classify,
+                        brand:brand,
+                        priceRang:priceRang,
+                        priceRangMin:priceRangMin,
+                        priceRangMax:priceRangMax,
+                        size:size
+
                     },
                     success(data){   
                         //将json字符串——》数组             
@@ -65,7 +82,13 @@ require(["config"],function(){
                         data:{
                             page:page,
                             qty:qty,
-                            type:orders[idx]
+                            type:orders[idx],
+                            classify:classify,
+                            brand:brand,
+                            priceRang:priceRang,
+                            priceRangMin:priceRangMin,
+                            priceRangMax:priceRangMax,
+                            size:size
                         },
                         success(data){
                             goods = data.data;
@@ -91,29 +114,86 @@ require(["config"],function(){
                         url:'../api/goodsList.php',
                         data:{
                             type:orders[idx],
+                            classify:classify,
+                            brand:brand,
+                            priceRang:priceRang,
+                            priceRangMin:priceRangMin,
+                            priceRangMax:priceRangMax,
+                            size:size
                         },
                         success(data){   
-                        //将json字符串——》数组             
-                        goods = JSON.parse(data).data;
-                        let counts = JSON.parse(data).counts;
-                        //得到数据，根据数据生成html
-                        createTable(goods);
+                            //将json字符串——》数组             
+                            goods = JSON.parse(data).data;
+                            let counts = JSON.parse(data).counts;
+                            //得到数据，根据数据生成html
+                            createTable(goods);
 
-                        //产生分页
-                        $page.html('');//清空页码
-                        var len = Math.ceil(counts/qty);//页码数量
-                        for(let i=0;i<len;i++){
-                            let $span = $('<span/>');
-                            $span.text(i+1);//页码
-                            if(i==0){//默认第一个高亮
-                                $span.addClass('active');
+                            //产生分页
+                            $page.html('');//清空页码
+                            var len = Math.ceil(counts/qty);//页码数量
+                            for(let i=0;i<len;i++){
+                                let $span = $('<span/>');
+                                $span.text(i+1);//页码
+                                if(i==0){//默认第一个高亮
+                                    $span.addClass('active');
+                                }
+                                $page.append($span);
                             }
-                            $page.append($span);
                         }
-                    }
                     })
                 })     
+                
+                //对selected进行事件绑定进行搜索
+                $right.on('click','span',function(event){
+                    //样式tab切换
+                    $(this).closest('.right').find('span').removeClass('active');
+                    $(this).addClass('active');
+                    event.preventDefault();
 
+
+                    //获取参数
+                    let $parma = $right.find('.active');
+                    classify = $parma.eq(0).text();
+                    brand = $parma.eq(1).text();
+                    priceRang = $parma.eq(2).text();//100-200 ->100,200
+                    size = $parma.eq(3).text();
+                    //100-200 ->100,200
+                    priceRangMin = priceRang.split('-')[0] || null;
+                    priceRangMax = priceRang.split('-')[1] || null;
+                    //根据参数发起ajax请求
+                    $.ajax({
+                        url:'../api/goodsList.php',
+                        data:{
+                            type:orders[idx],
+                            classify:classify,
+                            brand:brand,
+                            priceRang:priceRang,
+                            priceRangMin:priceRangMin,
+                            priceRangMax:priceRangMax,
+                            size:size
+                        },
+                        success(data){   
+                            //将json字符串——》数组             
+                            goods = JSON.parse(data).data;
+                            let counts = JSON.parse(data).counts;
+                            //得到数据，根据数据生成html
+                            createTable(goods);
+
+                            //产生分页
+                            $page.html('');//清空页码
+                            var len = Math.ceil(counts/qty);//页码数量
+                            for(let i=0;i<len;i++){
+                                let $span = $('<span/>');
+                                $span.text(i+1);//页码
+                                if(i==0){//默认第一个高亮
+                                    $span.addClass('active');
+                                }
+                                $page.append($span);
+                            }
+                        }
+                    });
+
+                })
 
                 //封装根据数据生成数据列表
                 function createTable(goods){
