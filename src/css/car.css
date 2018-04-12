@@ -1,3 +1,8 @@
+body {
+  position: relative;
+  height: 100%;
+}
+
 #main .container .header {
   padding: 5px 10px;
   line-height: 36px;
@@ -75,4 +80,203 @@
   height: 50px;
   right: 30px;
   top: -10px;
+}
+
+#main .container .main .main_header {
+  border-top: 1px solid #D4524C;
+  height: 40px;
+  line-height: 40px;
+  text-align: right;
+  font-size: 12px;
+  background: #E9E9E9;
+  color: #3f3f3f;
+  padding-right: 10px;
+  margin-bottom: 5px;
+}
+
+#main .container .main .main_header span {
+  float: left;
+  padding-left: 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#main .container .main .main_cont table {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+}
+
+#main .container .main .main_cont table th, #main .container .main .main_cont table td {
+  border: 1px solid #ccc;
+  font-size: 12px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+
+#main .container .main .main_cont table tbody td {
+  height: 80px;
+}
+
+#main .container .main .main_cont table tbody td img {
+  width: 80px;
+  height: 80px;
+  float: left;
+}
+
+#main .container .main .main_cont table tbody td p {
+  float: left;
+  line-height: 80px;
+  padding-left: 10px;
+}
+
+#main .container .main .main_cont table tbody td:nth-child(2) {
+  padding: 0 10px;
+}
+
+#main .container .main .main_cont table tbody td:nth-child(3) span {
+  display: block;
+  line-height: 20px;
+  letter-spacing: -1px;
+}
+
+#main .container .main .main_cont table tbody td:nth-child(3) span:nth-child(1) {
+  text-decoration: line-through;
+  font-size: 12px;
+  color: #CCC;
+}
+
+#main .container .main .main_cont table tbody td:nth-child(3) span:nth-child(2) {
+  font-size: 14px;
+  color: red;
+}
+
+#main .container .main .main_cont table tbody td:nth-child(4) span {
+  font-size: 18px;
+  cursor: pointer;
+  padding: 2px 5px;
+  vertical-align: middle;
+}
+
+#main .container .main .main_cont table tbody td:nth-child(4) input {
+  vertical-align: middle;
+  border: 1px solid #b3b3b3;
+  height: 18px;
+  width: 40px;
+  text-align: center;
+  line-height: 18px;
+  margin: 0 2px;
+}
+
+#main .container .main .main_cont table tbody td:nth-child(5) span {
+  color: #F60;
+  font-weight: bold;
+}
+
+#main .container .main .main_cont table tbody td:nth-child(6) span {
+  padding: 5px 10px;
+  cursor: pointer;
+  text-align: center;
+}
+
+#main .container .main .main_cont table tfoot td {
+  height: 50px;
+  text-align: left;
+}
+
+#main .container .main .main_cont table tfoot td:nth-child(1) {
+  color: #C9570C;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+#main .container .main .main_cont table tfoot td:nth-child(2) a {
+  line-height: 40px;
+  width: 151px;
+  height: 40px;
+  cursor: pointer;
+  float: right;
+  text-align: center;
+  background-color: #719D00;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px 5px;
+  margin-right: 10px;
+}
+
+#main .container .main .main_cont .bottom {
+  padding: 20px 10px;
+}
+
+#main .container .main .main_cont .bottom button {
+  float: right;
+  line-height: 25px;
+  width: 225px;
+  height: 56px;
+  cursor: pointer;
+  border-radius: 10px 10px;
+  background-color: #E47B05;
+  font-size: 24px;
+  color: #fff;
+}
+
+.xPopul {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border: 1px solid #000;
+}
+
+.xPopul .title {
+  font-size: 20px;
+  background-color: #ccc;
+  height: 40px;
+  line-height: 40px;
+  font-weight: bold;
+}
+
+.xPopul .content {
+  font-size: 20px;
+  height: 50px;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.xPopul span {
+  position: absolute;
+  display: block;
+  width: 80px;
+  height: 30px;
+  background: orange;
+  border: 1px solid #ccc;
+  text-align: center;
+  line-height: 30px;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px 4px;
+}
+
+.xPopul .confirmBtn {
+  left: 50px;
+  bottom: 100px;
+}
+
+.xPopul .cancelBtn {
+  right: 50px;
+  bottom: 100px;
+}
+
+.xoverlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0px;
+  right: 0px;
+  background-color: #fff;
+  opacity: 0.6;
 }

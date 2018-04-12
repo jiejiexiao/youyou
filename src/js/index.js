@@ -1,6 +1,6 @@
 
 require(['config'],function(){
-    require(['jquery','common','xcarousel'],function(){
+    require(['jquery','common','xcarousel','public'],function(){
 
         ;(function($){
             $(function($){
@@ -10,6 +10,12 @@ require(['config'],function(){
                 let $header = $('#header');
                 let $search = $header.find(':text');
                 let $searchBtn = $search.next();
+                let $imgCar = $('#header i').has('img');
+
+                //点击跳转购物车 覆盖public.js的跳转
+                $imgCar.on('click',function(){
+                    location.href = 'html/car.html';
+                })
 
 
                 //获取页面屏幕大小
@@ -48,11 +54,8 @@ require(['config'],function(){
                     $search.css('border','1px solid #000');
                 })
 
-
-
-
             })
-        }(jQuery));
+        })(jQuery);
 
     })
 })

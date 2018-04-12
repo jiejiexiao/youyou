@@ -1,5 +1,5 @@
 require(["config"],function(){
-    require(["jquery","common"],function(){
+    require(["jquery","common","public"],function(){
 
         ;(function($){
             $(function($){
@@ -9,6 +9,7 @@ require(["config"],function(){
                 let $page = $('#page');
                 let $selected = $('#main .selected');
                 let $right = $selected.find('.right');
+                let $imgCar = $('#header i').has('img');
                 let goods;//全局变量页面的数据
                 //向数据库获取数据
                 let qty = 20;//每页显示的条数
@@ -23,6 +24,10 @@ require(["config"],function(){
                 let priceRangMax;
                 let size;
 
+                //点击跳转购物车
+                $imgCar.on('click',function(){
+                    location.href = 'car.html';
+                })
 
                 //初始化ajax加载数据
                 $.ajax({
@@ -213,7 +218,7 @@ require(["config"],function(){
                 }
                 
             })
-        }(jQuery));        
+        })(jQuery);        
 
     })
 })

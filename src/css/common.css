@@ -74,6 +74,7 @@
   position: absolute;
   right: 0px;
   top: -1px;
+  cursor: pointer;
 }
 
 #header .h_bottom .b_right .right span {
@@ -147,6 +148,7 @@
 }
 
 #footer {
+  border-top: 1px solid #cccccc;
   background-color: #F6F6F6;
 }
 

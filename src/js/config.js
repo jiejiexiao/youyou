@@ -15,7 +15,7 @@ require.config({
     // 配置依赖
     shim:{
         xzoom:['jquery'],
-        xcarousel:['jquery']
-
+        xcarousel:['jquery'],
+        'public':['jquery','common']
     }
 });

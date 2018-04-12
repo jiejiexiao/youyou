@@ -164,6 +164,7 @@
 }
 
 #main .container .show .right .selected button {
+  position: relative;
   display: block;
   border: 0 none;
   cursor: pointer;
@@ -174,6 +175,25 @@
   color: #fff;
   border-radius: 5px 5px;
   margin: 0 10px 50px;
+}
+
+#main .container .show .right .selected button i {
+  display: none;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: 1px solid red;
+  border-radius: 50%;
+  line-height: 60px;
+  text-align: center;
+  background: #fff;
+  right: -80px;
+  top: -50px;
+}
+
+#main .container .show .right .selected button i img {
+  width: 40px;
+  height: 40px;
 }
 
 #main .container .show .right .bottom {

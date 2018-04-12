@@ -35,7 +35,7 @@
             }
             .right{
                 width: 80px;height: 38px;position:relative;
-                i{display:block;position:absolute;right:0px;top:-1px;}
+                i{display:block;position:absolute;right:0px;top:-1px;cursor:pointer;}
                 span{position:absolute;right:11px;top:-1px;color:#fff;}
             }
         }
@@ -92,6 +92,7 @@
 }
 
 #footer{
+    border-top:1px solid #cccccc;
     background-color:#F6F6F6;
     .container{
         .top{
