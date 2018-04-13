@@ -21,7 +21,7 @@
 
         $res = $res['password'];
 
-        $password = md5($password);
+        // $password = md5($password);
 
         if($res == $password){
             echo 'success';

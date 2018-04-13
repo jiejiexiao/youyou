@@ -19,9 +19,9 @@
         echo "fail";
     }else{
         if($type === 'reg'){
-            // 加密密码
-            // md5()
-            $password = md5($password);
+            // // 加密密码
+            // // md5()
+            // $password = md5($password);//前端已经加密
 
             // 注册（保存到数据库）
             $sql = "insert into user(username,password,email) values('$username','$password','$email')";

@@ -1,6 +1,6 @@
 
 require(['config'],function(){
-    require(["jquery","common"],function(){
+    require(["jquery","common","md5"],function(){
 
         ;(function($){
             $(function($){
@@ -15,7 +15,6 @@ require(['config'],function(){
                 let $selected = $('#selected');
                 let $btn = $('#btn');
                 let $spanPsd = $psdStrong.children();//密码强度
-
                 //用户名验证
                 $username.on('focus',function(){
 
@@ -204,6 +203,11 @@ require(['config'],function(){
                     let _username = $username.val().trim();
                     let _email = $email.val().trim();
                     let _password = $password.val().trim();
+
+                    //对密码进行加密
+                    _password = hex_md5(_password);
+
+                    //发送数据
                     $.ajax({
                         url:'../api/reg.php',
                         data:{
@@ -215,7 +219,16 @@ require(['config'],function(){
                         success(data){
                             if(data == 'success'){
                                 alert('注册成功');
-                                location.href = 'login.html';
+                                //设置过期时间 //默认7天免登录
+                                let d = new Date();
+                                d.setDate(d.getDate()+7);
+
+                                //生成cookie 用来保存登陆状态
+                                Cookie.set('loginStatus',_username,d,'/');
+
+                                //默认跳转到首页
+                                location.href = '../index.html';
+
                             }
                         }
                     })
