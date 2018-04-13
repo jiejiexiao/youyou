@@ -1,0 +1,33 @@
+{
+  "name": "youyou",
+  "version": "1.0.0",
+  "description": "sass gulp jquery",
+  "main": "gulpfile.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "dependencies": {
+    "browser-sync": "^2.23.6",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiejiexiao/youyou.git"
+  },
+  "keywords": [
+    "sass",
+    "gulp",
+    "jquery"
+  ],
+  "author": "jiejie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jiejiexiao/youyou/issues"
+  },
+  "homepage": "https://github.com/jiejiexiao/youyou#readme"
+}
