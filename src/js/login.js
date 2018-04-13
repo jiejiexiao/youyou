@@ -1,5 +1,5 @@
 require(['config'],function(){
-    require(["jquery","common","md5"],function(){
+    require(["jquery","common","md5","loginStatus"],function(){
 
 
         ;(function($){
@@ -91,18 +91,28 @@ require(['config'],function(){
                                 $password.next().text("密码输入错误")
                             }
                             if(data=="success"){
-                                alert('登陆成功');
                                 //设置过期时间 //默认7天免登录
                                 let d = new Date();
                                 d.setDate(d.getDate()+7);
 
-                                //生成cookie 用来保存登陆状态
-                                Cookie.set('loginStatus','online',d,'/');
-                                //生成cookie 用来保存用户名字
-                                Cookie.set('username',_username,d,'/');
-
-                                //默认跳转到首页
-                                location.href = '../index.html';
+                                //向后端发送请求 保存用户登陆状态
+                                $.ajax({
+                                    url:'../api/userLoginStatus.php',
+                                    data:{username:_username,status:'online'},
+                                    success(data){
+                                        if(data=='success'){
+                                            alert('登陆成功');
+                                            //生成cookie 用来保存登陆状态
+                                            Cookie.set('loginStatus','online',d,'/');
+                                            //生成cookie 用来保存用户名字
+                                            Cookie.set('username',_username,d,'/');
+                                            //默认跳转到首页
+                                            location.href = '../index.html';
+                                        }else{
+                                            alert('登陆失败')
+                                        }
+                                    }
+                                })
                             }
                         }
                     })

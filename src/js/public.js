@@ -38,14 +38,15 @@
                 //修改cookie
                 Cookie.set('loginStatus','offline','','/');
 
+                //向后台发送数据改变用户登陆状态
+                $.ajax({
+                    url:'../api/userLoginStatus.php',
+                    data:{username:username,status:'offline'},
+                });console.log(666)
+
             });
         }else{
 
-        }
-
-
-        
-
-        
+        }       
     })
 })(jQuery);
