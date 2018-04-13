@@ -23,13 +23,14 @@
   border-right: 0 none;
 }
 
-#header .h_center .container .c_right ul .none {
+#header .h_center .container .c_right .none {
   display: none;
 }
 
 #header .h_center .container a {
   font-size: 12px;
   color: #666;
+  cursor: pointer;
 }
 
 #header .h_bottom {

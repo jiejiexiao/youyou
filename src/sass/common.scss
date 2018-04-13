@@ -18,10 +18,11 @@
                     li:last-child{
                         a{border-right:0 none;}
                     }
-                    .none{display:none;}
+                    
                 }
+                .none{display:none;}
             }
-            a{font-size:12px;color:#666;}
+            a{font-size:12px;color:#666;cursor:pointer;}
         }
     }
     .h_bottom{
