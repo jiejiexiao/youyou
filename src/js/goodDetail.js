@@ -20,6 +20,7 @@ require(['config'],function(){
             let $imgMove = $addBtn.children();
             let $imgCar = $('#header i').has('img');
 
+
             //点击跳转购物车
             $imgCar.on('click',function(){
                 location.href = 'car.html';
@@ -33,6 +34,12 @@ require(['config'],function(){
 
             //当前对象
             let good;
+
+
+            //获取当前用户的登陆状态
+            let loginStatus = Cookie.get('loginStatus');//''、'online'、'offline'
+            //获取用户
+            let username = Cookie.get('username');
 
 
             //获取当前保存购物车信息的cookie
@@ -128,7 +135,7 @@ require(['config'],function(){
             })
 
 
-            //点击添加购物车按钮生成cookie
+            //点击添加购物车按钮生成cookie 并向后端发送数据保存用户的购物车信息
             $addBtn.on('click',function(){
                 //设置保存时间
                 let d = new Date();
@@ -171,11 +178,42 @@ require(['config'],function(){
                 //逆向判断
                 if(hasSize){//判断是否有相同size
                     goodsData[indexSize].qty = goodsData[indexSize].qty*1 + qty;
+
+                    //发起Ajax请求向后端发起数据 保存用户购物车信息
+                    if(loginStatus==='online'){
+                       $.ajax({
+                            url:'../api/userCar.php',
+                            data:{
+                                username:username,
+                                goodId:id,
+                                qty:goodsData[indexSize].qty,
+                                size:size,
+                                type:'unadd',
+
+                            },
+                        }) 
+                    }
                 }else{                                                        
                     good.qty = qty;//给good添加qty属性
                     good.size = size;//给对象添加鞋码属性
                     //要深复制 上述只是引用数据类型会覆盖
                     goodsData.push(JSON.parse(JSON.stringify(good)));//添加到数组
+
+                    //发起Ajax请求向后端发起数据 保存用户购物车信息
+                    if(loginStatus==='online'){
+                       $.ajax({
+                            url:'../api/userCar.php',
+                            data:{
+                                username:username,
+                                goodId:id,
+                                qty:qty,
+                                size:size,
+                                type:'add',
+
+                            },
+                        }) 
+                    }
+                    
                 }
                
                 //产生cookie或更新cookie
@@ -200,6 +238,8 @@ require(['config'],function(){
                     })
                 });
             })
+
+
         })(jQuery);
     })
 })

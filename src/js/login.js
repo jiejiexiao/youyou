@@ -102,12 +102,29 @@ require(['config'],function(){
                                     success(data){
                                         if(data=='success'){
                                             alert('登陆成功');
-                                            //生成cookie 用来保存登陆状态
-                                            Cookie.set('loginStatus','online',d,'/');
-                                            //生成cookie 用来保存用户名字
-                                            Cookie.set('username',_username,d,'/');
-                                            //默认跳转到首页
-                                            location.href = '../index.html';
+
+                                            $.ajax({
+                                                url:'../api/userCar.php',
+                                                data:{
+                                                    username:_username,
+                                                    type:'get',
+                                                },
+                                                success(data){
+                                                    console.log(data)
+                                                    // 生成cookie 用来保存登陆状态
+                                                    Cookie.set('loginStatus','online',d,'/');
+
+                                                    // //生成cookie 用来保存用户名字
+                                                    Cookie.set('username',_username,d,'/');
+
+                                                    //生成cookie 用来保存用户的购物车信息
+                                                    Cookie.set('goodsData',data,'','/');
+                                                    //默认跳转到首页
+                                                    location.href="../index.html";
+
+                                                }
+                                            })
+                                            
                                         }else{
                                             alert('登陆失败')
                                         }

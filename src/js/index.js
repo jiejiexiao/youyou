@@ -95,6 +95,8 @@ require(['config'],function(){
 
                     //修改cookie
                     Cookie.set('loginStatus','offline','','/');
+                    //注销购物车的信息
+                    Cookie.remove('goodsData','/');
 
                     //向后台发送数据改变用户登陆状态
                     $.ajax({
@@ -102,10 +104,12 @@ require(['config'],function(){
                         data:{username:username,status:'offline'},
                     });
 
-                });
-            }else{
+                    //刷新页面          
+                    location.reload();
 
-            }       
+                });
+            }
+                
         })
     })
 })

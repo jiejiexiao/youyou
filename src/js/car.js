@@ -10,9 +10,17 @@ require(['config'],function(){
             let $rate = $('.rate');
             let $imgCar = $('#header i').has('img');
 
+
             //声明全局变量//过期时间
             let d = new Date();
             d.setDate(d.getDate()+10000);
+
+
+            //获取当前用户的登陆状态
+            let loginStatus = Cookie.get('loginStatus');//''、'online'、'offline'
+            //获取用户
+            let username = Cookie.get('username');
+
             
             //读取cookie
             let goodsData = Cookie.get('goodsData');
@@ -22,6 +30,7 @@ require(['config'],function(){
             }else{
                 goodsData = [];
             }
+            // console.log(goodsData);
             
 
             //根据数据生成数据列表
@@ -43,6 +52,7 @@ require(['config'],function(){
                 createCount(goodsData);
             }
 
+
             //绑定事件用事件委托
             //阻止默认行为
             $carList.on('click',function(event){
@@ -59,6 +69,11 @@ require(['config'],function(){
                 }else{
                     $counts.val($counts.val()*1-1);
 
+                    //获取当前商品的id
+                    let id = $(this).closest('tr').data().id;
+                    //获取当前商品的size
+                    let size = $(this).closest('tr').find('td').eq(1).text().slice(3)*1;
+
                     //改变cookie中的当前id的qty
                     let line = $(this).closest('tr').data().line - 1;
                     goodsData[line].qty = $counts.val()*1;
@@ -71,6 +86,21 @@ require(['config'],function(){
 
                     //更新
                     createCount(goodsData);
+
+                    //发起Ajax请求向后端发起数据 保存用户购物车信息
+                    if(loginStatus==='online'){
+                       $.ajax({
+                            url:'../api/userCar.php',
+                            data:{
+                                username:username,
+                                goodId:id,
+                                qty:goodsData[line].qty,
+                                size:size,
+                                type:'unadd',
+
+                            },
+                        }) 
+                    }
                 }   
             })
             //增加数量
@@ -78,6 +108,11 @@ require(['config'],function(){
                 //获取counts
                 let $counts = $(this).prev();
                 $counts.val($counts.val()*1+1);
+
+                //获取当前商品的id
+                let id = $(this).closest('tr').data().id;
+                //获取当前商品的size
+                let size = $(this).closest('tr').find('td').eq(1).text().slice(3)*1;
 
                 //改变cookie中的当前id的qty
                 let line = $(this).closest('tr').data().line - 1;
@@ -90,7 +125,22 @@ require(['config'],function(){
                 Cookie.set('goodsData',JSON.stringify(goodsData),d,'/'); 
 
                 //更新
-                createCount(goodsData);         
+                createCount(goodsData); 
+
+                //发起Ajax请求向后端发起数据 保存用户购物车信息
+                if(loginStatus==='online'){
+                   $.ajax({
+                        url:'../api/userCar.php',
+                        data:{
+                            username:username,
+                            goodId:id,
+                            qty:goodsData[line].qty,
+                            size:size,
+                            type:'unadd',
+
+                        },
+                    }) 
+                }        
             })
             //改变输入框的数量
             .on('change','input',function(){
@@ -103,6 +153,11 @@ require(['config'],function(){
                 let line = $(this).closest('tr').data().line - 1;
                 goodsData[line].qty = $(this).val()*1;
 
+                //获取当前商品的id
+                let id = $(this).closest('tr').data().id;
+                //获取当前商品的size
+                let size = $(this).closest('tr').find('td').eq(1).text().slice(3)*1;
+
                 //改变总计 
                 $(this).closest('tr').children().eq(4).children().text(goodsData[line].youyouPrice * $(this).val() + '元');
 
@@ -112,6 +167,21 @@ require(['config'],function(){
 
                 //更新
                 createCount(goodsData);
+
+                //发起Ajax请求向后端发起数据 保存用户购物车信息
+                if(loginStatus==='online'){
+                   $.ajax({
+                        url:'../api/userCar.php',
+                        data:{
+                            username:username,
+                            goodId:id,
+                            qty:goodsData[line].qty,
+                            size:size,
+                            type:'unadd',
+
+                        },
+                    }) 
+                }     
             })
             //点击删除按钮
             .on('click','.delBtn',function(){
@@ -131,6 +201,11 @@ require(['config'],function(){
                 //
                 //确认删除
                 $confirmBtn.on('click',function(){
+                    //获取当前商品的id
+                    let id = $self.closest('tr').data().id;
+                    //获取当前商品的size
+                    let size = $self.closest('tr').find('td').eq(1).text().slice(3)*1;
+
                     let idx = $self.closest('tr').data().line - 1  ;//获取当前行对应的index
                     goodsData.splice(idx,1);//删除当前行
 
@@ -159,6 +234,19 @@ require(['config'],function(){
                         createList(goodsData);
                         createCount(goodsData);
                     }
+                    //发起Ajax请求向后端发起数据 保存用户购物车信息
+                    if(loginStatus==='online'){
+                       $.ajax({
+                            url:'../api/userCar.php',
+                            data:{
+                                username:username,
+                                goodId:id,
+                                size:size,
+                                type:'del',
+
+                            },
+                        }) 
+                    } 
 
                     //更新cookie
                     Cookie.set('goodsData',JSON.stringify(goodsData),d,'/');
@@ -192,6 +280,7 @@ require(['config'],function(){
                 }).join('');
                 $carList.html(res);
             }
+
 
             //封装生成总价 差价 比率
             function createCount(goodsData){
