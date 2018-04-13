@@ -34,4 +34,8 @@
         echo 'fail_user';
     }
 
+
+    // 关闭数据库，避免资源浪费
+    $conn->close();   
+    
 ?>

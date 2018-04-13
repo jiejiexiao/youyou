@@ -240,8 +240,9 @@ require(['config'],function(){
                                         }
                                     }
                                 })
+                            }else{
 
-
+                                alert('注册失败');
                             }
                         }
                     })

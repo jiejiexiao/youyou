@@ -29,7 +29,14 @@
             // 执行sql语句
             $res = $conn->query($sql);
 
-            if($res){
+            //创建改用户的表用来保存购物信息
+            $usertable = 'user_' . $username;
+            
+            $createtable = "create table $usertable(id int(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,goodId int(10),qty int(3),size int(3))"; 
+              
+            $res1 = $conn->query($createtable); 
+
+            if($res && $res1){
                 echo "success";
             }else{
                 echo "fail";
@@ -38,6 +45,10 @@
             // 验证用户名可注册
             echo "success";
         }
-    }    
+    } 
+
+
+    // 关闭数据库，避免资源浪费
+    $conn->close();   
 
 ?>

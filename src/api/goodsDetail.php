@@ -10,4 +10,8 @@
     $res = $result->fetch_all(MYSQLI_ASSOC);
 
     echo json_encode($res,JSON_UNESCAPED_UNICODE);
+
+
+    // 关闭数据库，避免资源浪费
+    $conn->close();   
 ?>
