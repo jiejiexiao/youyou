@@ -15,12 +15,16 @@
         //更新头部购物车的数量
         $imgCar.next().text(goodsData.length);
 
+        let loginStatus = 'offline';//默认下线
         //判断用户登陆状态
-        let loginStatus = Cookie.get('loginStatus');
+        loginStatus = Cookie.get('loginStatus');
+
+
+
         //
-        if(loginStatus!=''){
+        if(loginStatus==='online'){
             //获取用户名
-            let username = loginStatus;
+            let username = Cookie.get('username');
             //tab切换
             $uls.addClass('none').last().removeClass('none').find('a').first().text(username).css('color','red');
             //获取退出 节点
@@ -31,8 +35,9 @@
                 //tab切换
                 $uls.addClass('none').first().removeClass('none');
 
-                //删除cookie
-                Cookie.remove('loginStatus','/');
+                //修改cookie
+                Cookie.set('loginStatus','offline','','/');
+
             });
         }else{
 

@@ -97,7 +97,9 @@ require(['config'],function(){
                                 d.setDate(d.getDate()+7);
 
                                 //生成cookie 用来保存登陆状态
-                                Cookie.set('loginStatus',_username,d,'/');
+                                Cookie.set('loginStatus','online',d,'/');
+                                //生成cookie 用来保存用户名字
+                                Cookie.set('username',_username,d,'/');
 
                                 //默认跳转到首页
                                 location.href = '../index.html';
