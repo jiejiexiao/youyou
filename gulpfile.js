@@ -41,3 +41,49 @@ gulp.task('server',()=>{
     // 监听sass文件修改，并自动编译
     gulp.watch('./src/sass/*.scss',['compileSass'])
 })
+
+
+// es6-->es5
+let babel = require('gulp-babel');
+
+gulp.task('es6',function(){
+    gulp.src('./src/js/*.js')
+    .pipe(babel({
+        'presets':['es2015']
+    }))
+    .pipe(gulp.dest('./src/js/es5/'))
+});
+
+
+// js压缩
+let uglify = require('gulp-uglify');
+let pump = require('pump');
+let concat = require('gulp-concat');
+let rename = require('gulp-rename');
+
+gulp.task('compressJs',function(cb){
+    // gulp.src('./src/js/**/*.js')
+
+    // .pipe(uglify())
+
+    // // 输出到构建目录
+    // .pipe(gulp.dest('./dist/js/'))
+
+    pump([
+        gulp.src('./src/js/es5/*.js'),
+
+        // 合并
+        concat('index.js'),
+        gulp.dest('./dist/js/'),
+
+        // 压缩
+        uglify(),
+
+        // 重命名
+        rename({
+            suffix:'.min'
+        }),
+
+        gulp.dest('dist/js/')
+    ],cb );
+});
